@@ -1,0 +1,9 @@
+{
+  "name": "prisma-client-js-797",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@prisma/cli": "^2.6.0-dev.61"
+  }
+}
