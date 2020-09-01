@@ -10,8 +10,7 @@ Repro for
 - Load `schema.sql` into a Postgres database
 - Run `yarn; yarn prisma generate`
 - Run `node read-nan-prisma-client.js`
-  <details>
-  <summary>Error:</summary>
+  ```
   PrismaClientRustPanicError:
   Invalid `prisma.withNan.findOne()` invocation in
   /Users/divyendusingh/Documents/prisma/triage/prisma-client-js-797/read-nan-prisma-client.js:7:42
@@ -26,13 +25,11 @@ Repro for
 
   at PrismaClientFetcher.request (/Users/divyendusingh/Documents/prisma/triage/prisma-client-js-797/node_modules/@prisma/client/runtime/index.js:1:227975)
   at processTicksAndRejections (internal/process/task_queues.js:97:5)
-
-    </details>
+  ```
 
 - Run `node write-nan-prisma-client.js`
 
-    <details>
-    <summary>Error:</summary>
+    ```
     PrismaClientKnownRequestError:
     Invalid `prisma.withNan.create()` invocation in
     /Users/divyendusingh/Documents/prisma/triage/prisma-client-js-797/write-nan-prisma-client.js:7:42
@@ -44,11 +41,11 @@ Repro for
   meta: { path: 'Mutation.createOneWithNan.data.WithNanCreateInput.num' }
   }
 
-    </details>
+  ```
 
 - Run `node read-nan-raw.js`
-    <details>
-    <summary>Error:</summary>
+
+  ```
 
   PrismaClientRustPanicError:
   Invalid `prisma.queryRaw()` invocation:
@@ -64,12 +61,11 @@ Repro for
             at PrismaClientFetcher.request (/Users/divyendusingh/Documents/prisma/triage/prisma-client-js-797/node_modules/@prisma/client/runtime/index.js:1:227975)
             at processTicksAndRejections (internal/process/task_queues.js:97:5)
 
-        </details>
+  ```
 
 - Run `node write-nan-raw.js`
 
-    <details>
-    <summary>Error:</summary>
+  ```
     PrismaClientRustPanicError:
     Invalid `prisma.queryRaw()` invocation:
 
@@ -84,4 +80,4 @@ Repro for
         at PrismaClientFetcher.request (/Users/divyendusingh/Documents/prisma/triage/prisma-client-js-797/node_modules/@prisma/client/runtime/index.js:1:227975)
         at processTicksAndRejections (internal/process/task_queues.js:97:5)
 
-    </details>
+  ```
