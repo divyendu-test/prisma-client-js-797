@@ -4,8 +4,8 @@ const prisma = new PrismaClient()
 
 async function main() {
   try {
-    const nanData = await prisma.$queryRaw(
-      `SELECT num from "public"."WithNan" where id =2;`,
+    const nanData = await prisma.$executeRaw(
+      `INSERT INTO "WithNan" (num) VALUES ('NaN');`,
     )
     console.log({ nanData })
   } catch (e) {
