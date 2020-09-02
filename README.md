@@ -65,3 +65,22 @@ Repro for
   ```
 
 - Run `node write-nan-raw.js` - This works
+- Run `node read-nan-raw-nullify.js` - This works
+
+```
+divyendusingh [prisma-client-js-797]$ node read-nan-raw-nullify.js
+{
+  nanData: [
+    { id: 1, nullif: '1' },
+    { id: 2, nullif: null },
+    { id: 3, nullif: '0.8' },
+    { id: 4, nullif: null },
+    { id: 5, nullif: null },
+    { id: 6, nullif: null },
+    { id: 7, nullif: null },
+    { id: 8, nullif: null },
+    { id: 9, nullif: null },
+    { id: 10, nullif: null }
+  ]
+}
+```
